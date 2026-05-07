@@ -7,6 +7,7 @@ final int gameover = 3;
 //TARGET VARIABLES
 float x, y, d;
 float vx, vy;
+int score, lives;
 
 void setup() {
   size(1000, 1000);
@@ -17,6 +18,8 @@ void setup() {
   x = width/2;
   y = height/2;
   d = 100;
+  score = 0;
+  lives = 3;
   vx = random(-10, 10);
   vy = random(-10, 10);
 }
