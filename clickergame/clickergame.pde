@@ -2,7 +2,7 @@ int mode;
 final int intro = 1;
 final int game = 2;
 final int pause = 3;
-final int gameover = 3;
+final int gameover = 4;
 
 //TARGET VARIABLES
 float x, y, d;

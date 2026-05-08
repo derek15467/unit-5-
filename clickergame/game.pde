@@ -2,7 +2,11 @@ void game() {
   background(0);
   fill(255);
   circle(x, y, d);
-  
+
+//pause button
+  stroke(0);
+  circle(100, 100, 100);
+
   text("Score: " + score, width/2, 50);
   text("Lives: " + lives, width/2, 100);
   //moving
@@ -12,20 +16,25 @@ void game() {
 
   //bouncing
   if (x < d/2 || x > width-d/2) {
-    vx = vx * -1; }
-    
-    if(y < d/2 || y > height-d/2) {
-      vy = vy * -1; }
+    vx = vx * -1;
+  }
 
+  if (y < d/2 || y > height-d/2) {
+    vy = vy * -1;
+  }
 }
 void gameClicks() {
   if (dist(mouseX, mouseY, x, y) < 50) {
-    score = score + 1; }
-    else {
-      lives = lives -1; }
-      if (lives == 0) {
-        
-        mode = gameover; }
+    score = score + 1;
+  } else {
+    lives = lives -1;
+  }
+  if (lives == 0) {
+
+    mode = gameover;
+  }
   
+  if(dist(mouseX, mouseY, 100, 100) < 50) {
+    mode = pause; }
   
 }
