@@ -17,7 +17,7 @@ void setup() {
   //target initialization
   x = width/2;
   y = height/2;
-  d = 100;
+  d = 150;
   score = 0;
   lives = 3;
   vx = random(-10, 10);

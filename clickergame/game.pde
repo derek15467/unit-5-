@@ -24,8 +24,10 @@ void game() {
   }
 }
 void gameClicks() {
-  if (dist(mouseX, mouseY, x, y) < 50) {
+  if (dist(mouseX, mouseY, x, y) < 75) {
     score = score + 1;
+    vx = vx * 1.07;
+    vy = vy * 1.07;
   } else {
     lives = lives -1;
   }
