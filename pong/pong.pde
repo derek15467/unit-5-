@@ -9,9 +9,28 @@ final int gameover = 4;
 float leftx, lefty, leftd, rightx, righty, rightd;
 float ballx, bally, balld; //ball
 
+//keyboard variables
+boolean wkey, skey, upkey, downkey;
+
 void setup() {
   size(1000, 1000);
   mode = intro;
+  
+  //initialize paddles
+  leftx = 0;
+  lefty = height/2;
+  leftd = 200;
+  rightx = width;
+  righty = height/2;
+  rightd = 200;
+  
+  //initialize ball
+  ballx = width/2;
+  bally = height/2;
+  balld = 50;
+  
+  wkey = skey = upkey = downkey = false;
+   
 }
 
 void draw() {
