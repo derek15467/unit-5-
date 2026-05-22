@@ -8,6 +8,8 @@ final int gameover = 4;
 //entity variables
 float leftx, lefty, leftd, rightx, righty, rightd;
 float ballx, bally, balld; //ball
+float vx, vy;
+
 
 //keyboard variables
 boolean wkey, skey, upkey, downkey;
@@ -30,7 +32,12 @@ void setup() {
   balld = 50;
   
   wkey = skey = upkey = downkey = false;
-   
+  
+  vx = 17;
+  vy = 17;
+  
+
+
 }
 
 void draw() {
