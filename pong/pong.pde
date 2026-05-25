@@ -9,6 +9,7 @@ final int gameover = 4;
 float leftx, lefty, leftd, rightx, righty, rightd;
 float ballx, bally, balld; //ball
 float vx, vy;
+int score, score2;
 
 
 //keyboard variables
@@ -17,6 +18,8 @@ boolean wkey, skey, upkey, downkey;
 void setup() {
   size(1000, 1000);
   mode = intro;
+  score = 0;
+  textAlign(CENTER, CENTER);
   
   //initialize paddles
   leftx = 0;

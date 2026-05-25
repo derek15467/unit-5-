@@ -5,6 +5,10 @@ void game() {
   stroke(255);
   line(width/2, 0, width/2, 1000);
   
+  textSize(40);
+  text("Score: " + score2, 200, 50);
+  text("Score: " + score, 800, 50);
+  
   //paddles
   noStroke();
   fill(255, 0, 0);
@@ -32,6 +36,14 @@ void game() {
 
   if (bally < balld/2 || bally > height - balld/2) {
     vy = vy * -1;
+
+
+  if (ballx >= 970) {
+    score2 = score2 + 1; }
+    
+  if (ballx <= 30) {
+    score = score + 1; }
+    
 
 }
   }
