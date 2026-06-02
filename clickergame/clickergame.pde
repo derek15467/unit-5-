@@ -3,6 +3,7 @@ final int intro = 1;
 final int game = 2;
 final int pause = 3;
 final int gameover = 4;
+final int options = 5;
 
 //TARGET VARIABLES
 float x, y, d;
@@ -28,12 +29,14 @@ void setup() {
 void draw() {
   if (mode == intro) {
     intro();   
-  }  else if (mode == game) {
+  } else if (mode == game) {
     game();
-  }  else if (mode == pause) {
+  } else if (mode == pause) {
     pause();
-  }  else if (mode == gameover) {
+  } else if (mode == gameover) {
     gameover();
+  } else if (mode == options) {
+    options();
   } else {
     println("Error: Mode = " + mode);
   }

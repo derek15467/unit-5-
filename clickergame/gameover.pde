@@ -1,7 +1,8 @@
 void gameover() {
   background(#B2222C);
   textSize(100);
-  text("GAME OVER", width/2, height/2);
+  text("GAME OVER", width/2, 400);
+  text("High Score", width/2, 600);
 }
 
 
