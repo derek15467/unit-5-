@@ -8,7 +8,7 @@ final int options = 5;
 //TARGET VARIABLES
 float x, y, d;
 float vx, vy;
-int score, lives;
+int score, lives, highScore;
 
 void setup() {
   size(1000, 1000);
@@ -21,6 +21,7 @@ void setup() {
   d = 150;
   score = 0;
   lives = 3;
+  highScore = 0;
   vx = random(-10, 10);
   vy = random(-10, 10);
 }

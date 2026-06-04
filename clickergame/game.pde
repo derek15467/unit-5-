@@ -1,4 +1,4 @@
- void game() {
+void game() {
   background(0);
   fill(255);
   circle(x, y, d);
@@ -37,6 +37,9 @@ void gameClicks() {
     lives = lives -1;
   }
   if (lives == 0) {
+      if (score > highScore) {
+    highScore = score;
+  }
     mode = gameover; 
   }
   
