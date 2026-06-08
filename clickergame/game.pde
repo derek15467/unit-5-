@@ -1,9 +1,11 @@
 void game() {
   background(0);
-  fill(255);
+  fill(targetColor);
+  d = targetSize;
   circle(x, y, d);
 
 //pause button
+  fill(255);
   stroke(0);
   circle(100, 100, 100);
   textSize(40);

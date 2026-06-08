@@ -9,6 +9,8 @@ final int options = 5;
 float x, y, d;
 float vx, vy;
 int score, lives, highScore;
+color targetColor;
+float sliderX, targetSize;
 
 void setup() {
   size(1000, 1000);
@@ -24,6 +26,9 @@ void setup() {
   highScore = 0;
   vx = random(-10, 10);
   vy = random(-10, 10);
+  targetColor = color(255);
+  sliderX = 500;
+  targetSize = 150;
 }
 
 
