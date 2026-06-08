@@ -4,12 +4,14 @@ final int intro = 1;
 final int game = 2;
 final int pause = 3;
 final int gameover = 4;
+final int gameover2 = 5;
 
 //entity variables
 float leftx, lefty, leftd, rightx, righty, rightd;
 float ballx, bally, balld; //ball
 float vx, vy;
-int score, score2;
+int score, score2, timer;
+boolean AI;
 
 
 //keyboard variables
@@ -19,6 +21,7 @@ void setup() {
   size(1000, 1000);
   mode = intro;
   score = 0;
+  timer = 100;
   textAlign(CENTER, CENTER);
   
   //initialize paddles
@@ -37,7 +40,7 @@ void setup() {
   wkey = skey = upkey = downkey = false;
   
   vx = 17;
-  vy = 17;
+  vy = random(-2, 2);
   
 
 
@@ -52,8 +55,9 @@ void draw() {
     pause();
   } else if (mode == gameover) {
     gameover();
-  } else {
-    println("Mode error: " + mode);
+  } else if (mode == gameover2) {
+    gameover2();
   }
+    
+    println("Mode error: " + mode);
 }
-  

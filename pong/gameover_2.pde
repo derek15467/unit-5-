@@ -1,11 +1,11 @@
-void gameover() {
-  background(#B2222C);
+void gameover2() {
+  background(200);
   textSize(100);
-  text("RIGHT WINS!", width/2, height/2);
-}
-
-void gameoverClicks() {
+  text("Left Wins!", width/2, height/2); }
+  
+void gameover2Clicks() {
   mode = intro;
+
   score = 0;
   score2 = 0;
 

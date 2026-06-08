@@ -4,51 +4,92 @@ void game() {
   strokeWeight(5);
   stroke(255);
   line(width/2, 0, width/2, 1000);
-  
+
   textSize(40);
   text("Score: " + score2, 200, 50);
   text("Score: " + score, 800, 50);
-  
+
   //paddles
   noStroke();
   fill(255, 0, 0);
   circle(leftx, lefty, leftd);
   fill(0);
   circle(rightx, righty, rightd);
-  
+
   //ball
   fill(#F5A42A);
   circle(ballx, bally, balld);
+
+  if (wkey == true) lefty = lefty - 25;
+  if (skey == true) lefty = lefty + 25;
   
-  if (wkey == true) lefty = lefty - 10;
-  if (skey == true) lefty = lefty + 10;
-  if (upkey == true) righty = righty - 10;
-  if (downkey == true) righty = righty + 10;
-  
-   //moving
-   ballx = ballx + vx;
-   bally = bally + vy;
-   
+  if (AI == false) {
+  if (upkey == true) righty = righty - 25;
+  if (downkey == true) righty = righty + 25;
+  } else {
+    righty = bally; }
+    
+  //moving
+  if (timer > 0) {
+    timer--;
+  } else {
+    ballx = ballx + vx;
+    bally = bally + vy;
+  }
+
+  // left paddle collison
+  if (dist(ballx, bally, leftx, lefty) < balld/2 + leftd/2) {
+
+    vx = (ballx - leftx)/5;
+    vy = (bally - lefty)/5;
+  }
+
+  // right paddle colliso
+  if (dist(ballx, bally, rightx, righty) < balld/2 + rightd/2) {
+
+    vx = (ballx - rightx)/5;
+    vy = (bally - righty)/5;
+  }
+
   //bouncing
-  if (ballx < balld/2 || ballx > width - balld/2) {
-    vx = vx * -1;
+  if (ballx < 0) {
+    score = score + 1;
+
+    ballx = width/2;
+    bally = height/2;
+    vx = 17;
+    vy = 0;
+    timer = 100;
   }
 
-  if (bally < balld/2 || bally > height - balld/2) {
-    vy = vy * -1;
 
+  if (ballx > width) {
+    score2 = score2 + 1;
+    ballx = width/2;
+    bally = height/2;
+    vx = -17;
+    vy = 0;
+    timer = 100;
+  }
+  // top
+  if (bally < balld/2) {
+    bally = balld/2;
+    vy = abs(vy);
+  }
 
-  if (ballx >= 970) {
-    score2 = score2 + 1; }
+  // bottom
+  if (bally > height - balld/2) {
+    bally = height - balld/2;
+    vy = -abs(vy);
+  }
+  
+  if (score == 7) {
+    mode = gameover; }
     
-  if (ballx <= 30) {
-    score = score + 1; }
-    
-
+  if (score2 == 7) {
+    mode = gameover2; }
 }
-  }
 
 
 void gameClicks() {
-  
 }

@@ -6,6 +6,8 @@ void mouseReleased() {
   } else if (mode == pause) {
     pauseClicks(); 
   } else if (mode == gameover) {
-    gameoverClicks(); }
+    gameoverClicks(); 
+  } else if (mode == gameover2) {
+    gameover2Clicks(); }
     
 }
