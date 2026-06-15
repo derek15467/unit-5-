@@ -1,0 +1,7 @@
+void lose() {
+  
+}
+
+void loseClicks() {
+  
+}
