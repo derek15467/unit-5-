@@ -15,17 +15,12 @@ boolean[] alive;
 int n;
 int tempx, tempy;
 boolean akey, dkey;
-PImage[] gif;
-int f;
-int numberOfFrames;
-
 
 
 void setup() {
   size(1000, 1000);
   mode = intro;
-  textAlign(CENTER, CENTER);
-
+  
   score = 0;
   lives = 3;
   paddlex = width/2;
@@ -37,6 +32,8 @@ void setup() {
   vx = 0;
   vy = 10;
   akey = dkey = false;
+  
+  //brick variables
 
   n = 24;
   x = new int[n];
@@ -44,7 +41,7 @@ void setup() {
   alive = new boolean[n];
   tempx = 125;
   tempy = 100;
-
+  
   int i = 0;
   while (i < n) {
     x[i] = tempx;
@@ -53,36 +50,21 @@ void setup() {
     tempx = tempx + 150;
     if (tempx > 875) {
       tempx = 125;
-      tempy = tempy + 100;
-    }
-    i = i + 1;
-  }
-
-  //gif
-  numberOfFrames = 29;
-  gif = new PImage[numberOfFrames];
-
-
-  int g = 0;
-  while (g < numberOfFrames) {
-    gif[g] = loadImage("frame_" + g + "_delay-0.03s.gif");
-    g = g + 1;
-  }
+      tempy = tempy + 100; }
+    i=i+1; }
 }
 
 
 void draw() {
   if (mode == intro) {
-    intro();
-  } else if (mode == game) {
+    intro();   
+  }  else if (mode == game) {
     game();
-  } else if (mode == pause) {
+  }  else if (mode == pause) {
     pause();
-  } else if (mode == win) {
+  }  else if (mode == win) {
     win();
-  } else if (mode == lose) {
-    lose();
-  } else {
-    println("Error: Mode = " + mode);
+  }  else if (mode == lose) {
+    lose(); } else {
+    println("Error: Mode = " + mode); }
   }
-}

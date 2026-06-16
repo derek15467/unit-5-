@@ -31,7 +31,8 @@ void game() {
   int i = 0;
   while (i < n) {
     if (alive[i] == true) {
-    manageBrick(i); }
+      manageBrick(i);
+    }
     i++;
   }
 
@@ -39,10 +40,10 @@ void game() {
   // Score
   textSize(30);
   fill(255); //
-  text("Score: " + score, 50, 700);
-  text("Lives: " + lives, 50, 750);
+  text("Score: " + score, 100, 700);
+  text("Lives: " + lives, 100, 750);
 
-  // ball reset when lost life
+  // ball reset
   if (bally > 1000) {
     lives = lives - 1;
     ballx = width/2;
@@ -50,7 +51,7 @@ void game() {
     vx = 0;
     vy = 10;
   }
-
+  //score and lives
   if (lives == 0) {
     mode = lose;
   }
